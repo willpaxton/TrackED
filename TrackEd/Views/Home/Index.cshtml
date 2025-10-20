@@ -1,8 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewData["href-css"] = "~/css/index.css";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="welcome-hero">
+    <div class="welcome-overlay">
+        <h1>Welcome to TrackED</h1>
+        <p>Empowering the nursing program to track and support students by geo-location.</p>
+        <div class="welcome-actions">
+            <a href="Dashboard.html" class="btn-primary">Go to Dashboard</a>
+            <a href="login.html" class="btn-secondary">Login</a>
+        </div>
+    </div>
+</section>
+
+<section class="info-boxes">
+    <div class="info-box">
+        <h2>Student Tracking</h2>
+        <p>Monitor nursing students' locations and progress in real time for better support and safety.</p>
+    </div>
+    <div class="info-box">
+        <h2>Geo-Location Insights</h2>
+        <p>Visualize student placements and clinical assignments on an interactive map for program planning.</p>
+    </div>
+    <div class="info-box">
+        <h2>Program Analytics</h2>
+        <p>Access key metrics and reports to improve outcomes and streamline administration.</p>
+    </div>
+</section>

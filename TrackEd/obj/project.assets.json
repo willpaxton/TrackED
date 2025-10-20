@@ -4557,11 +4557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackEd\\TrackED\\TrackEd\\TrackEd.csproj",
+      "projectUniqueName": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\TrackEd.csproj",
       "projectName": "TrackEd",
-      "projectPath": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackEd\\TrackED\\TrackEd\\TrackEd.csproj",
+      "projectPath": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\TrackEd.csproj",
       "packagesPath": "C:\\Users\\School\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackEd\\TrackED\\TrackEd\\obj\\",
+      "outputPath": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\School\\AppData\\Roaming\\NuGet\\NuGet.Config",

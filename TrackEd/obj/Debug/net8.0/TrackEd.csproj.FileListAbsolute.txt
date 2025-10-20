@@ -135,9 +135,7 @@ C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 -
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TrackEd.props
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TrackEd.props
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\scopedcss\bundle\TrackEd.styles.css
-C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\scopedcss\projectbundle\TrackEd.bundle.scp.css
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\TrackEd.csproj.Up2Date
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\TrackEd.dll
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackEd\obj\Debug\net8.0\refint\TrackEd.dll
@@ -291,3 +289,4 @@ C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 -
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackED\TrackEd\obj\Debug\net8.0\TrackEd.pdb
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackED\TrackEd\obj\Debug\net8.0\TrackEd.genruntimeconfig.cache
 C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackEd\TrackED\TrackEd\obj\Debug\net8.0\ref\TrackEd.dll
+C:\Users\School\OneDrive - East Tennessee State University\Documents\CSCI 4250 - Software Engineering\TrackED\TrackEd\obj\Debug\net8.0\TrackEd.sourcelink.json
