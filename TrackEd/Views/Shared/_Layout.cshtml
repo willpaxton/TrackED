@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TrackEd</title>
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+     <link rel="stylesheet" href="~/TrackEd.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="@ViewData["href-css"]" asp-append-version="true" />
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="Logo"><a asp-area="" asp-controller="Home" asp-action="Index">TrackEd</a></div>
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                </li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </div>
+    </nav>
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted panel-footer text-center">
+        <div class="container">
+            &copy; 2025 - TrackEd
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

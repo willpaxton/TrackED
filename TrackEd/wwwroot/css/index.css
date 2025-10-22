@@ -1,0 +1,145 @@
+﻿/* --- Welcome Hero Section --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.welcome-hero {
+    position: relative;
+    height: 100vh; /* fill viewport height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/imgs/Updated.JPG') center center/cover no-repeat;
+    background-attachment: scroll; /* scroll with page */
+    margin: 0; /* remove white space above */
+    padding-top: 0;
+}
+
+.welcome-overlay {
+    background: rgba(26,34,51,0.60);
+    padding: 3rem 2rem 2.5rem 2rem;
+    border-radius: 18px;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 32px rgba(30,40,60,0.10);
+}
+
+.welcome-hero h1 {
+    font-size: 2.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.welcome-hero p {
+    font-size: 1.2rem;
+    color: #e0e6f0;
+    margin-bottom: 2rem;
+}
+
+.welcome-logo {
+    height: 80px;
+    margin-bottom: 2rem;
+}
+
+.welcome-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background: #3e7fff;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background: #2456a5;
+    }
+
+.btn-secondary {
+    background: #2d3a5a;
+    color: #fff;
+}
+
+    .btn-secondary:hover {
+        background: #1a2233;
+    }
+
+@media (max-width: 700px) {
+    .welcome-hero {
+        min-height: 260px;
+        margin-top: 1.2rem;
+    }
+
+    .welcome-overlay {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    }
+
+    .welcome-logo {
+        height: 48px;
+    }
+}
+
+/* --- Info Boxes Section --- */
+.info-boxes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem auto 2rem auto;
+    max-width: 1100px;
+}
+
+.info-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30,40,60,0.08);
+    padding: 2rem 1.5rem;
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 320px;
+    text-align: left;
+    transition: box-shadow 0.2s;
+}
+
+    .info-box:hover {
+        box-shadow: 0 4px 24px rgba(30,40,60,0.16);
+    }
+
+    .info-box h2 {
+        font-size: 1.3rem;
+        color: #1a2233;
+        margin-bottom: 0.7rem;
+    }
+
+    .info-box p {
+        color: #2d3a5a;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+@media (max-width: 900px) {
+    .info-boxes {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .info-box {
+        max-width: 95vw;
+    }
+}
