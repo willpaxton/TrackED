@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\tracked.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\tracked.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|c:\\users\\school\\onedrive - east tennessee state university\\documents\\csci 4250 - software engineering\\tracked\\tracked\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DF76F690-AB26-4ED9-BF8F-FEEC6F8541EE}|TrackEd\\TrackEd.csproj|solutionrelative:tracked\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,29 +54,107 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "TrackED\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Areas\\Identity\\Pages\\Account\\Login.cshtml*",
+              "RelativeToolTip": "TrackED\\Areas\\Identity\\Pages\\Account\\Login.cshtml*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T17:01:19.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "TrackED\\ScaffoldingReadMe.txt",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "TrackED\\ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-10-22T17:00:57.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrackEd",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\TrackEd.csproj",
+              "RelativeDocumentMoniker": "TrackEd\\TrackEd.csproj",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\TrackEd.csproj*",
+              "RelativeToolTip": "TrackEd\\TrackEd.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-22T16:59:46.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dashboard.css",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\dashboard.css",
+              "RelativeDocumentMoniker": "TrackED\\wwwroot\\css\\dashboard.css",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\dashboard.css",
+              "RelativeToolTip": "TrackED\\wwwroot\\css\\dashboard.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T16:58:33.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrackED\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "TrackED\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T16:56:38.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "TrackEd\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "TrackEd\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T16:54:06.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "TrackED\\Views\\Shared\\_LoginPartial.cshtml",
               "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeToolTip": "TrackED\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-20T18:35:47.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "index.css",
-              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\index.css",
-              "RelativeDocumentMoniker": "TrackEd\\wwwroot\\css\\index.css",
-              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\index.css",
-              "RelativeToolTip": "TrackEd\\wwwroot\\css\\index.css",
+              "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\index.css",
+              "RelativeDocumentMoniker": "TrackED\\wwwroot\\css\\index.css",
+              "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\index.css",
+              "RelativeToolTip": "TrackED\\wwwroot\\css\\index.css",
               "ViewState": "AgIAABYAAAAAAAAAAAAAAJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-10-20T18:35:21.944Z",
@@ -60,39 +162,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "layout.css",
               "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\layout.css",
               "RelativeDocumentMoniker": "TrackED\\wwwroot\\css\\layout.css",
               "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\wwwroot\\css\\layout.css",
               "RelativeToolTip": "TrackED\\wwwroot\\css\\layout.css",
-              "ViewState": "AgIAADsAAAAAAAAAAAAYwFEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAqwF8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-10-20T18:34:09.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "TrackED\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "TrackED\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-20T17:40:31.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "TrackED\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackED\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "TrackED\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-20T17:38:50.788Z",
               "EditorCaption": ""

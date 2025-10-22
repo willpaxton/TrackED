@@ -1,12 +1,20 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
       "Id": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
       "Id": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\layout.css",
       "PackagePath": "staticwebassets\\css\\layout.css"
+    },
+    {
+      "Id": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
       "Id": "C:\\Users\\School\\OneDrive - East Tennessee State University\\Documents\\CSCI 4250 - Software Engineering\\TrackED\\TrackEd\\wwwroot\\favicon.ico",

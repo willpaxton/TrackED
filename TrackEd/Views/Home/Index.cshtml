@@ -2,14 +2,24 @@
     ViewData["Title"] = "Home Page";
     ViewData["href-css"] = "~/css/index.css";
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
 
 <section class="welcome-hero">
     <div class="welcome-overlay">
         <h1>Welcome to TrackED</h1>
         <p>Empowering the nursing program to track and support students by geo-location.</p>
         <div class="welcome-actions">
-            <a href="Dashboard.html" class="btn-primary">Go to Dashboard</a>
-            <a href="login.html" class="btn-secondary">Login</a>
+            <a asp-area="" asp-controller="Dashboard" class="btn-primary" asp-action="Index">Go to Dashboard</a>
+            @if (SignInManager.IsSignedIn(User)) {
+                <a class="btn-secondary" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Manage Account</a>
+            }
+            else {
+                <a class="btn-secondary" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            }
         </div>
     </div>
 </section>
