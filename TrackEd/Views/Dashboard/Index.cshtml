@@ -3,22 +3,76 @@
     ViewData["href-css"] = "~/css/dashboard.css";
 }
 
+<!-- Google Font for this page -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 
-<div class="Dashboard-info"></div>
-<h1>Dashboard</h1>
-<p>Welcome to the TrackerED Dashboard. Here you can monitor student locations, view analytics, and manage your nursing program effectively.</p>
+<h1 class="caesar-dressing-regular">Dashboard</h1>
+
 
 <div class="dash-boxes">
-    <info-1 class="dash-box1">
-        <h2>Student Locations</h2>
-        <p>Track real-time locations of nursing students during their clinical placements.</p>
+    <div class="dash-box">
+      <h2>Student Locations</h2>
+      <p>Track real-time locations of nursing students during their clinical placements.</p>
+    </div>
+    <div class="dash-box">
+      <h2>Program Analytics</h2>
+      <p>View key statistics and reports on student engagement, attendance, and site activity.</p>
+    </div>
+    <div class="dash-box">
+      <h2>Faculty Overview</h2>
+      <p>Manage and assign instructors, oversee supervision schedules, and monitor clinical hours.</p>
+    </div>
+  </div>
 
-</div>
+  
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mason Moore</td>
+      <td>Johnson City Medical Center</td>
+      <td>Sctive</td>
+    </tr>
+    <tr>
+      <td>Katherine King</td>
+      <td>Johnson City Medical Center</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Tyler Stephens</td>
+      <td>Johnson City Medical Center</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Nick Trahan</td>
+      <td>Johnson City Medical Center</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Will Paxton</td>
+      <td>Johnson City Medical Center</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>Daniel Kefene</td>
+      <td>Johnson City Medical Center</td>
+      <td>Active</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="Dashboard-Overview">
     <!-- Google Map Container -->
     <div id="map" style="width: 100%; height: 500px; border-radius: 12px; margin-top: 1rem;"></div>
 </div>
 
-<!-- Nick ass the Placeholder for Google Maps API script -->
+<!-- Nick add the Placeholder for Google Maps API script -->
 <!-- You can add the API key and script here -->

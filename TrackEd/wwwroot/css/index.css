@@ -13,8 +13,8 @@ html, body {
     align-items: center;
     justify-content: center;
     background: url('/imgs/Updated.JPG') center center/cover no-repeat;
-    background-attachment: scroll; /* scroll with page */
-    margin: 0; /* remove white space above */
+    background-attachment: scroll; 
+    margin: 0; 
     padding-top: 0;
 }
 
@@ -143,3 +143,34 @@ html, body {
         max-width: 95vw;
     }
 }
+
+
+/* AboutUs Heading */
+.Aboutus h2, .Purpose h2 {
+    text-align: center;       /* Centers text inside the heading */
+    font-size: 2rem;
+    color: #041e44;
+    background-color: #e0e7ff;  
+    border: 3px solid #041e44;   
+    border-radius: 12px;
+    padding: 15px 25px;          
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    display: inline-block;     
+    margin: 0 auto 20px auto;  /* Centers the inline-block heading */
+}
+
+/* AboutUs and Purpose Containers */
+.Aboutus, .Purpose {
+    text-align: center;        /* Centers all content inside */
+}
+
+/* Paragraph styling */
+.Aboutus p, .Purpose p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #1e293b;
+    max-width: 900px;
+    margin: 0 auto 40px auto; 
+    padding: 0 20px;
+}
+
