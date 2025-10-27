@@ -103,3 +103,29 @@ table {
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+
+
+  /* Geolocation output box */
+.geo-test-result {
+    margin: 40px 60px;
+    padding: 20px;
+    background-color: #e0f2fe;     
+    border: 2px solid #0284c7;      
+    border-radius: 12px;
+    color: #0369a1;                 
+    white-space: pre-wrap;           
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.geo-test-result h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #0369a1;
+    text-align: center; 
+}            
+
+.geo-test-result pre {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}

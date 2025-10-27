@@ -3,7 +3,32 @@
     ViewData["href-css"] = "~/css/dashboard.css";
 }
 
-<!-- Google Font for this page -->
+@functions {
+    // Simulate student geolocation API
+    public async Task<string> GetStudentGeoLocationsAsync()
+    {
+        await Task.Delay(500); // simulate async API call
+
+        // Mock geolocation data for students
+        var locations = new[]
+        {
+            new { Name = "Daniel Kefene", Latitude = 36.332, Longitude = -82.354 },
+            new { Name = "Mason Moore", Latitude = 36.335, Longitude = -82.358 },
+            new { Name = "Katherine King", Latitude = 36.330, Longitude = -82.352 }
+        };
+
+        string result = "Student Geolocations:\n";
+        foreach (var loc in locations)
+        {
+            result += $"{loc.Name}: Latitude={loc.Latitude}, Longitude={loc.Longitude}\n";
+        }
+
+        return result;
+    }
+}
+
+
+<!-- Google Font for this page dont touch!! -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
@@ -69,10 +94,9 @@
   </tbody>
 </table>
 
-<div class="Dashboard-Overview">
-    <!-- Google Map Container -->
-    <div id="map" style="width: 100%; height: 500px; border-radius: 12px; margin-top: 1rem;"></div>
+
+<div class="geo-test-result">
+    <h2>Mock Student Geolocations</h2>
+    <pre>@await GetStudentGeoLocationsAsync()</pre>
 </div>
 
-<!-- Nick add the Placeholder for Google Maps API script -->
-<!-- You can add the API key and script here -->
