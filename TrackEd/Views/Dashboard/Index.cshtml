@@ -34,6 +34,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 
 
+<style>
+iframe {
+  position: relative;
+  top: -500px;
+  z-index: 1;
+  
+}
+canvas {
+  z-index: 2;
+}
+
+html {
+  background-color: red;
+}
+
+</style>
+
 <script>
   const options = {
     enableHighAccuracy: true,
@@ -47,6 +64,20 @@
 
   function Updatelocation() {
     navigator.geolocation.getCurrentPosition(success, error, options)
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.clearRect(0,0,500,500);
+    ctx.moveTo(250, 250);
+    ctx.beginPath();
+    ctx.arc(250, 250, 10, 0, 2 * Math.PI);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "white";
+    ctx.stroke();
+    ctx.stroke();
+    c.style.background = rgba(255,255,255,0);
   }
 
   function success(pos) {
@@ -121,6 +152,10 @@
     </tr>
   </tbody>
 </table>
+
+<canvas width="500px" height="500px" id="myCanvas">
+  
+</canvas>
 
 <iframe src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE&center=36.302360811187214,-82.36984874754702&zoom=15" width="500px" height="500px" id="map"></iframe>
 
