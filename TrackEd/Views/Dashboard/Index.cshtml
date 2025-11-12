@@ -28,11 +28,14 @@
 
     public async Task<string> LocationResult()
     {
-        await Task.Delay(1000);
+        await Task.Delay(10000);
         var longValue = @Context.Request.Cookies["long"];
         var latValue = @Context.Request.Cookies["lat"];
 
         var retval = "Longitude: " + longValue + " Latitude: " + latValue;
+        
+        Console.WriteLine(retval);
+        
         return retval;
 
     }
@@ -72,6 +75,9 @@
     console.log(source);
   }
 
+  window.onload = function() {
+    Updatelocation();
+  };
 </script>
 
 
