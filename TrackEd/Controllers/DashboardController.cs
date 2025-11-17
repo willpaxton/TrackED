@@ -4,7 +4,7 @@ using System.Diagnostics;
 using TrackEd.Models;
 
 namespace TrackEd.Controllers {
-    [Authorize]
+    /*[Authorize]*/
     public class DashboardController : Controller {
         private readonly ILogger<HomeController> _logger;
 
