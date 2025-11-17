@@ -8,9 +8,11 @@ namespace TrackEd.Models.Entities
 
     {
         public int Year { get; set; }
-        public string Major { get; set; }
+        public string Major { get; set; } = string.Empty;
         public bool IsLocationTrackingOn { get; set; }
-        public ICollection<Assignment> Schedule { get; } = new List<Assignment>();
-
+        public double? LastLatitude { get; set; } // ? means optional so we dont need cords to create them. 
+        public double? LastLongitude { get; set; } // Wont be filled until we actually get their location
+        public ICollection<Assignment> Assignments { get; set; } = new List<Assignment>();
+        // ^ One student to many Assignment = Assignments
     }
 }
