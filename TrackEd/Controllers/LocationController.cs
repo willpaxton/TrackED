@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Logging;
 
 namespace MyProject.Controllers
 {
@@ -7,15 +8,29 @@ namespace MyProject.Controllers
     [Route("api/[controller]")]
     public class LocationController : ControllerBase
     {
+
+        private readonly ILogger<LocationController> _logger;
+
+        public LocationController(ILogger<LocationController> logger)
+        {
+            _logger = logger;
+        }
+
+        [HttpGet("Ping")]
+        public IActionResult Ping()
+        {
+            return Ok("Pong");
+        }
         
         [HttpPost("SaveCoords")]
         public IActionResult SaveCoords([FromBody] GeoData coords)
         {
+
             if (coords == null)
                 return BadRequest();
 
-            Console.WriteLine(coords.Longitude);
-            Console.WriteLine(coords.Longitude);
+            _logger.LogInformation("{long}", coords.Longitude);
+            _logger.LogInformation("{lat}", coords.Latitude);
 
 
             // SaveToSQLite(coords);
