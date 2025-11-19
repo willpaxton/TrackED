@@ -68,8 +68,25 @@
     var crd = pos.coords;
     var long = crd.longitude;
     var lat = crd.latitude;
-    document.cookie = "long=" + long;
-    document.cookie = "lat="  + lat;
+
+    var payload = {
+      longitude: long,
+      latitude: lat
+    }
+
+    console.log("Sending: ", payload);
+
+    fetch('api/location', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+
+
+    // document.cookie = "long=" + long;
+    // document.cookie = "lat="  + lat;
     var source="https://www.google.com/maps/embed/v1/view?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE&center=" + lat + "," + long +"&zoom=18"
     document.getElementById("map").src = source;
     console.log(source);
