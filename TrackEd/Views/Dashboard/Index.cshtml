@@ -6,27 +6,17 @@
 @using TrackEd.Services
 
 @functions {
-    // Simulate student geolocation API
-    public async Task<string> GetStudentGeoLocationsAsync()
+    // Define clinical sites - UPDATED COORDINATES
+    private static readonly List<ClinicalSite> ClinicalSites = new List<ClinicalSite>
     {
-        await Task.Delay(500); // simulate async API call
-
-        // Mock geolocation data for students
-        var locations = new[]
-        {
-            new { Name = "Daniel Kefene", Latitude = 36.332, Longitude = -82.354 },
-            new { Name = "Mason Moore", Latitude = 36.335, Longitude = -82.358 },
-            new { Name = "Katherine King", Latitude = 36.330, Longitude = -82.352 }
-        };
-
-        string result = "Student Geolocations:\n";
-        foreach (var loc in locations)
-        {
-            result += $"{loc.Name}: Latitude={loc.Latitude}, Longitude={loc.Longitude}\n";
+        new ClinicalSite 
+        { 
+            Name = "Centennial Hall", 
+            Latitude = 36.304306,
+            Longitude = -82.364556,
+            AcceptableRangeMeters = 100 
         }
-
-        return result;
-    }
+    };
 
     public string LocationResult()
     {
@@ -39,15 +29,41 @@
         
         return $"Longitude: {coords.lng}, Latitude: {coords.lat}\nLast Updated: {coords.lastUpdate:HH:mm:ss}";
     }
-  
 }
-
 
 <!-- Google Font for this page dont touch!! -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 
+<style>
+  .status-active {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .status-away {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .status-unknown {
+    color: gray;
+  }
+  
+  .settings-box {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+  }
+
+  .table-updating {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+</style>
 
 <script>
   const options = {
@@ -55,6 +71,26 @@
     timeout: 5000,
     maximumAge: 0,
   };
+
+  // UPDATED CLINICAL SITE COORDINATES
+  const CLINICAL_SITE = {
+    lat: 36.304306,
+    lng: -82.364556,
+    name: "Centennial Hall"
+  };
+
+  // Mock student data - In production, this would come from your database/API
+  const students = [
+    { name: "Mason Moore", lat: 36.302, lng: -82.370, site: "Centennial Hall" },
+    { name: "Katherine King", lat: 36.303, lng: -82.369, site: "Centennial Hall" },
+    { name: "Tyler Stephens", lat: 36.304306, lng: -82.364556, site: "Centennial Hall" },
+    { name: "Nick Trahan", lat: 36.332, lng: -82.354, site: "Centennial Hall" },
+    { name: "Will Paxton", lat: 36.330, lng: -82.352, site: "Centennial Hall" },
+    { name: "Daniel Kefene", lat: 36.304306, lng: -82.364556, site: "Centennial Hall" }
+  ];
+
+  // Global variable for adjustable max distance
+  let maxDistanceMeters = 100;
 
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -86,47 +122,153 @@
     .then(response => response.json())
     .then(data => {
       console.log("Response:", data);
-      // Update map with marker
-      updateMapWithMarker(lat, long);
-      // Update location display
+      updateMapWithBothMarkers(lat, long);
       updateLocationDisplay(lat, long);
+      updateStudentTable(); // NEW: Update the table
     })
     .catch(error => {
       console.error("Error saving coordinates:", error);
-      // Fallback to manual URL construction with marker
-      updateMapWithMarker(lat, long);
+      updateMapWithBothMarkers(lat, long);
       updateLocationDisplay(lat, long);
+      updateStudentTable(); // NEW: Update the table even on error
     });
   }
 
-  function updateMapWithMarker(lat, long) {
-    // Using 'place' mode instead of 'view' mode to show a marker
-    var source = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE&q=" + lat + "," + long + "&zoom=18";
+  function updateMapWithBothMarkers(studentLat, studentLong) {
+    var source = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE" +
+                 "&origin=" + CLINICAL_SITE.lat + "," + CLINICAL_SITE.lng +
+                 "&destination=" + studentLat + "," + studentLong +
+                 "&mode=walking";
+    
     document.getElementById("map").src = source;
-    console.log("Map updated with marker:", source);
+    console.log("Map updated with both markers:", source);
   }
 
   function updateLocationDisplay(lat, long) {
     var now = new Date().toLocaleTimeString();
-    var displayText = `Longitude: ${long}, Latitude: ${lat}\nLast Updated: ${now}`;
+    var distance = calculateDistance(lat, long, CLINICAL_SITE.lat, CLINICAL_SITE.lng);
+    
+    var status = distance <= maxDistanceMeters ? "✓ AT LOCATION" : "✗ AWAY FROM LOCATION";
+    var statusColor = distance <= maxDistanceMeters ? "green" : "red";
+    
+    var displayText = `Longitude: ${long.toFixed(6)}, Latitude: ${lat.toFixed(6)}\n`;
+    displayText += `Distance to ${CLINICAL_SITE.name}: ${distance.toFixed(1)}m\n`;
+    displayText += `Acceptable Range: ${maxDistanceMeters}m\n`;
+    displayText += `Status: ${status}\n`;
+    displayText += `Last Updated: ${now}`;
+    
     document.getElementById("locationDisplay").textContent = displayText;
+    document.getElementById("locationDisplay").style.color = statusColor;
+    document.getElementById("locationDisplay").style.fontWeight = "bold";
   }
 
-  // Update location immediately on page load
-  window.onload = function() {
+  // NEW FUNCTION: Update the student table
+  function updateStudentTable() {
+    const tbody = document.getElementById("studentTableBody");
+    
+    // Add updating visual effect
+    tbody.classList.add('table-updating');
+    
+    // Clear existing rows
+    tbody.innerHTML = '';
+    
+    // Rebuild table with current data
+    students.forEach(student => {
+      const distance = calculateDistance(student.lat, student.lng, CLINICAL_SITE.lat, CLINICAL_SITE.lng);
+      const isPresent = distance <= maxDistanceMeters;
+      
+      const statusText = isPresent 
+        ? `✓ At Location (${distance.toFixed(1)}m away)` 
+        : `✗ Not at Location (${distance.toFixed(1)}m away)`;
+      
+      const statusClass = isPresent ? 'status-active' : 'status-away';
+      const checkText = isPresent ? '✓ Present' : '✗ Away';
+      
+      const row = `
+        <tr>
+          <td>${student.name}</td>
+          <td>${student.site}</td>
+          <td class="${statusClass}">${statusText}</td>
+          <td class="${statusClass}">${checkText}</td>
+        </tr>
+      `;
+      
+      tbody.innerHTML += row;
+    });
+    
+    // Remove updating visual effect
+    setTimeout(() => {
+      tbody.classList.remove('table-updating');
+    }, 300);
+    
+    console.log("Student table updated with current range: " + maxDistanceMeters + "m");
+  }
+
+  function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371000; // Earth's radius in meters
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+    
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    
+    return R * c;
+  }
+
+  function updateSettings() {
+    const newDistance = parseInt(document.getElementById('maxDistance').value);
+    
+    if (isNaN(newDistance) || newDistance < 10 || newDistance > 1000) {
+      alert("Please enter a valid distance between 10 and 1000 meters");
+      return;
+    }
+    
+    maxDistanceMeters = newDistance;
+    document.getElementById('currentRange').textContent = maxDistanceMeters;
+    
+    console.log("Updated max distance to: " + maxDistanceMeters + "m");
+    
+    // Re-check current location with new distance
     Updatelocation();
     
-    // Set up automatic updates every 60 seconds (1 minute)
+    // Also update the table immediately
+    updateStudentTable();
+    
+    // Visual feedback
+    const btn = event.target;
+    btn.textContent = "Applied!";
+    btn.style.backgroundColor = "#28a745";
+    setTimeout(() => {
+      btn.textContent = "Apply";
+      btn.style.backgroundColor = "";
+    }, 1500);
+  }
+
+  window.onload = function() {
+    // Show hospital marker initially
+    var initialSource = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE" +
+                       "&q=" + CLINICAL_SITE.lat + "," + CLINICAL_SITE.lng +
+                       "&zoom=15";
+    document.getElementById("map").src = initialSource;
+    
+    // Initialize the table
+    updateStudentTable();
+    
+    // Then get student location
+    Updatelocation();
+    
+    // Auto-update every 60 seconds
     setInterval(function() {
-      console.log("Auto-updating location...");
+      console.log("Auto-updating location and table...");
       Updatelocation();
-    }, 60000); // 60000 milliseconds = 1 minute
+    }, 60000);
   };
 </script>
 
-
 <h1 class="caesar-dressing-regular">Dashboard</h1>
-
 
 <div class="dash-boxes">
     <div class="dash-box">
@@ -141,57 +283,43 @@
       <h2>Faculty Overview</h2>
       <p>Manage and assign instructors, oversee supervision schedules, and monitor clinical hours.</p>
     </div>
-  </div>
+</div>
 
-  
+<!-- Distance Settings Control -->
+<div class="settings-box">
+  <h3 style="margin-top: 0;">⚙️ Range Settings</h3>
+  <label for="maxDistance" style="font-weight: bold;">Acceptable Distance Range (meters):</label>
+  <input type="number" id="maxDistance" value="100" min="10" max="1000" step="10" 
+         style="padding: 8px; font-size: 16px; width: 100px; margin: 0 10px;">
+  <button onclick="updateSettings()" style="padding: 8px 20px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px;">Apply</button>
+  <p style="font-size: 14px; color: #666; margin-top: 10px; margin-bottom: 0;">
+    Current Range: <strong><span id="currentRange">100</span>m</strong>
+    <br>
+    <em>💡 Tip: 50m = strict, 100m = normal, 200m+ = loose</em>
+  </p>
+</div>
+
+<h3>Student Status <span style="font-size: 14px; color: #666;">(Auto-updates every 60 seconds)</span></h3>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Location</th>
       <th>Status</th>
+      <th>Distance Check</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Mason Moore</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Katherine King</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Tyler Stephens</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Nick Trahan</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Will Paxton</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
-    <tr>
-      <td>Daniel Kefene</td>
-      <td>Johnson City Medical Center</td>
-      <td>Active</td>
-    </tr>
+  <tbody id="studentTableBody">
+    <!-- Table rows will be dynamically generated by JavaScript -->
   </tbody>
 </table>
 
-<iframe src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBpSX02zBnR-ueioYxcK67SF3DIpyo4hWE&center=36.302360811187214,-82.36984874754702&zoom=15" width="500px" height="500px" id="map"></iframe>
+<h3>Live Tracking Map</h3>
+<p style="color: #666; font-size: 14px;">
+  📍 <strong>Point A</strong>: Centennial Hall | 
+  📍 <strong>Point B</strong>: Current Student Location
+</p>
+<iframe src="" width="500px" height="500px" id="map" style="border: 2px solid #ccc;"></iframe>
 
-<input type="button" value="Refresh" onclick="Updatelocation();">
-<pre id="locationDisplay">@LocationResult()</pre>
-
-<!-- <div class="geo-test-result">
-    <h2>Mock Student Geolocations</h2>
-    <pre>@await GetStudentGeoLocationsAsync()</pre>
-</div> -->
+<input type="button" value="Refresh Location" onclick="Updatelocation();" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
+<pre id="locationDisplay" style="font-size: 16px; margin-top: 10px;">@LocationResult()</pre>
