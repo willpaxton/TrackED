@@ -79,14 +79,37 @@
     name: "Centennial Hall"
   };
 
+
+  async function loadStudents() {
+    try {
+      const response = await fetch('/api/student');
+      const students = await response.json();
+
+      console.log(students); // You now have your real data!
+      
+      // Example: loop through students to add markers
+      students.forEach(s => {
+          L.marker([s.lat, s.lng]).addTo(map)
+            .bindPopup(`${s.name}<br>${s.site}`);
+      });
+
+    } catch (error) {
+        console.error("Failed to load students:", error);
+    }
+  }
+
+    // Load as soon as page is ready
+    document.addEventListener("DOMContentLoaded", loadStudents);
+
   // Mock student data - In production, this would come from your database/API
   const students = [
     { name: "Mason Moore", lat: 36.302, lng: -82.370, site: "Centennial Hall" },
     { name: "Katherine King", lat: 36.303, lng: -82.369, site: "Centennial Hall" },
     { name: "Tyler Stephens", lat: 36.304306, lng: -82.364556, site: "Centennial Hall" },
     { name: "Nick Trahan", lat: 36.332, lng: -82.354, site: "Centennial Hall" },
-    { name: "Will Paxton", lat: 36.330, lng: -82.352, site: "Centennial Hall" },
-    { name: "Daniel Kefene", lat: 36.304306, lng: -82.364556, site: "Centennial Hall" }
+    { name: "Test", lat: 36.330, lng: -82.352, site: "Centennial Hall" },
+    { name: "Daniel Kefene", lat: 36.304306, lng: -82.364556, site: "Centennial Hall" },
+    { name: students[0]["firstName"], lat: 36.304306, lng: -82.364556, site: "Centennial Hall" }
   ];
 
   // Global variable for adjustable max distance
