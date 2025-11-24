@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 /TrackEd/bin
 /TrackEd/obj
+TrackEd/Data/app.db-shm
