@@ -129,3 +129,281 @@ table {
     font-size: 1rem;
     line-height: 1.5;
 }
+
+/* ========================= */
+/* TASK MANAGEMENT SECTION */
+/* ========================= */
+
+.task-section {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: #f7f9fb;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.task-section h2 {
+    color: #1e2a5a;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.task-section p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Toggle Buttons */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.view-toggle button {
+    background-color: #dce3ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1e2a5a;
+    transition: all 0.2s ease;
+}
+
+.view-toggle button.active, .view-toggle button:hover {
+    background-color: #2148c0;
+    color: white;
+}
+
+/* Hide inactive view */
+.hidden {
+    display: none;
+}
+
+/* ===== TABLE VIEW ===== */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.task-table th, .task-table td {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-table thead {
+    background-color: #2148c0;
+    color: white;
+}
+
+.task-table tr:hover {
+    background-color: #f1f5ff;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.status.completed { background-color: #28a745; }
+.status.in-progress { background-color: #ffc107; color: black; }
+.status.pending { background-color: #6c757d; }
+.status.review { background-color: #17a2b8; }
+
+/* ===== CALENDAR VIEW ===== */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.day {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 100px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: left;
+}
+
+.day.header {
+    font-weight: bold;
+    text-align: center;
+    background-color: #2148c0;
+    color: white;
+}
+
+.day.task {
+    border: 2px solid #2148c0;
+    box-shadow: 0 0 15px rgba(33,72,192,0.4);
+}
+
+.day .date {
+    font-weight: bold;
+    color: #1e2a5a;
+    display: block;
+}
+
+.day p {
+    font-size: 0.85rem;
+    color: #2148c0;
+    margin-top: 6px;
+}
+/* ===== INTERACTIVE FULL CALENDAR STYLING ===== */
+
+.calendar-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.calendar-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.day {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 120px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.day:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(33,72,192,0.4);
+}
+
+.day.header {
+  background-color: #2148c0;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: none;
+  cursor: default;
+}
+
+.day .date {
+  font-weight: bold;
+  color: #1e3a8a;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.task-list p {
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 0.8rem;
+  padding: 4px 6px;
+  border-radius: 6px;
+  margin: 3px 0;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* ===== MODAL STYLES ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.3s ease;
+}
+
+.modal-content h3 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.modal-content button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#saveTask {
+  background-color: #2148c0;
+  color: white;
+}
+
+#saveTask:hover {
+  background-color: #1e3a8a;
+}
+
+#cancelTask {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+#cancelTask:hover {
+  background-color: #cbd5e1;
+}
+
+/* Optional animation for modal pop-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.day.today {
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59,130,246,0.5);
+}

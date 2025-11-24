@@ -174,3 +174,74 @@ html, body {
     padding: 0 20px;
 }
 
+/* ===== Glow Box Section Styles ===== */
+
+.how-it-works, .user-roles {
+    background-color: #f7f9fb;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.how-it-works h2, .user-roles h2 {
+    font-size: 2rem;
+    color: #1e2a5a;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Container Layout */
+.steps, .role-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Glow Box Core */
+.step, .role {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1 1 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(33, 72, 192, 0.1);
+}
+
+/* Glow Effect */
+.step:hover, .role:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(33, 72, 192, 0.5);
+    border-color: rgba(33, 72, 192, 0.4);
+}
+
+/* Text Styling */
+.step h3, .role h3 {
+    font-size: 1.3rem;
+    color: #2148c0;
+    margin-bottom: 10px;
+}
+
+.step p, .role p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Optional subtle fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step, .role {
+    animation: fadeInUp 0.8s ease forwards;
+}

@@ -15,15 +15,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace TrackEd.Areas.Identity.Pages.Account
-{
-    public class LoginModel : PageModel
-    {
-        private readonly SignInManager<IdentityUser> _signInManager;
+namespace TrackEd.Areas.Identity.Pages.Account {
+    public class LoginModel : PageModel {
+        private readonly MySignInManager _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
-        {
+        public LoginModel(MySignInManager signInManager, ILogger<LoginModel> logger) {
             _signInManager = signInManager;
             _logger = logger;
         }
@@ -58,8 +55,7 @@ namespace TrackEd.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public class InputModel
-        {
+        public class InputModel {
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -84,10 +80,8 @@ namespace TrackEd.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
-        {
-            if (!string.IsNullOrEmpty(ErrorMessage))
-            {
+        public async Task OnGetAsync(string returnUrl = null) {
+            if (!string.IsNullOrEmpty(ErrorMessage)) {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
 
@@ -101,33 +95,27 @@ namespace TrackEd.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
-        {
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null) {
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid) {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-                if (result.Succeeded)
-                {
+                if (result.Succeeded) {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
-                if (result.RequiresTwoFactor)
-                {
+                if (result.RequiresTwoFactor) {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
-                if (result.IsLockedOut)
-                {
+                if (result.IsLockedOut) {
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
-                else
-                {
+                else {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }
@@ -135,6 +123,21 @@ namespace TrackEd.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+    }
+    public class MySignInManager : SignInManager<IdentityUser> {
+        public MySignInManager(Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager, Microsoft.AspNetCore.Http.IHttpContextAccessor contextAccessor, Microsoft.AspNetCore.Identity.IUserClaimsPrincipalFactory<IdentityUser> claimsFactory, Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions> optionsAccessor, Microsoft.Extensions.Logging.ILogger<Microsoft.AspNetCore.Identity.SignInManager<IdentityUser>> logger, Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider schemes, IUserConfirmation<IdentityUser> confirmation)
+            : base(userManager, contextAccessor, claimsFactory, optionsAccessor, logger, schemes, confirmation) {
+        }
+
+        public override async Task<Microsoft.AspNetCore.Identity.SignInResult> PasswordSignInAsync(string email, string password,
+            bool isPersistent, bool lockoutOnFailure) {
+            var user = await UserManager.FindByEmailAsync(email);
+            if (user == null) {
+                return Microsoft.AspNetCore.Identity.SignInResult.Failed;
+            }
+
+            return await PasswordSignInAsync(user, password, isPersistent, lockoutOnFailure);
         }
     }
 }
