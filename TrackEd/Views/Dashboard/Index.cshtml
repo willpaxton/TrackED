@@ -323,3 +323,428 @@
 
 <input type="button" value="Refresh Location" onclick="Updatelocation();" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
 <pre id="locationDisplay" style="font-size: 16px; margin-top: 10px;">@LocationResult()</pre>
+
+
+<!-- ========================= -->
+
+
+<!-- TASK MANAGEMENT SECTION -->
+
+
+<!-- ========================= -->
+
+
+
+
+
+<section class="task-section">
+
+
+    <h2>Nursing Program Tasks</h2>
+
+
+    <p>View all ongoing clinical assignments and academic tasks in table or calendar format.</p>
+
+
+
+
+
+    <div class="view-toggle">
+
+
+        <button id="tableViewBtn" class="active">Table View</button>
+
+
+        <button id="calendarViewBtn">Calendar View</button>
+
+
+    </div>
+
+
+
+
+
+    <!-- ===== TABLE VIEW ===== -->
+
+
+    <div id="tableView" class="view">
+
+
+        <table class="task-table">
+
+
+            <thead>
+
+
+                <tr>
+
+
+                    <th>Task ID</th>
+
+
+                    <th>Task Name</th>
+
+
+                    <th>Assigned To</th>
+
+
+                    <th>Status</th>
+
+
+                    <th>Due Date</th>
+
+
+                </tr>
+
+
+            </thead>
+
+
+            <tbody>
+
+
+                <tr><td>T-001</td><td>Update Student Clinical Rotations</td><td>Tyler Stephens</td><td><span class="status in-progress">In Progress</span></td><td>Nov 21, 2025</td></tr>
+
+
+                <tr><td>T-002</td><td>Submit Weekly Clinical Evaluations</td><td>Katherine King</td><td><span class="status pending">Pending</span></td><td>Nov 22, 2025</td></tr>
+
+
+                <tr><td>T-003</td><td>Upload Patient Care Plan</td><td>Daniel Kefene</td><td><span class="status completed">Completed</span></td><td>Nov 17, 2025</td></tr>
+
+
+                <tr><td>T-004</td><td>Review HIPAA Compliance Module</td><td>Mason Moore</td><td><span class="status in-progress">In Progress</span></td><td>Nov 23, 2025</td></tr>
+
+
+                <tr><td>T-005</td><td>Attend Simulation Lab</td><td>Will Paxton</td><td><span class="status review">Scheduled</span></td><td>Nov 25, 2025</td></tr>
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+
+
+
+    <!-- ===== CALENDAR VIEW ===== -->
+
+
+    <div id="calendarView" class="view hidden">
+
+
+        <section class="calendar-section">
+
+
+            <h3>Interactive Clinical Task Calendar</h3>
+
+
+            <div id="calendar" class="calendar"></div>
+
+
+
+
+
+            <!-- Modal to Add Tasks -->
+
+
+            <div id="taskModal" class="modal hidden">
+
+
+                <div class="modal-content">
+
+
+                    <h3>Add Clinical Task</h3>
+
+
+                    <input type="text" id="taskTitle" placeholder="Task Title (e.g., Submit Care Plan)">
+
+
+                    <input type="text" id="taskAssigned" placeholder="Assigned To (e.g., Mason Moore)">
+
+
+                    <button id="saveTask">Save Task</button>
+
+
+                    <button id="cancelTask" class="cancel">Cancel</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+    // ========== TABLE ↔ CALENDAR TOGGLE ==========
+
+
+    const tableViewBtn = document.getElementById("tableViewBtn");
+
+
+    const calendarViewBtn = document.getElementById("calendarViewBtn");
+
+
+    const tableView = document.getElementById("tableView");
+
+
+    const calendarView = document.getElementById("calendarView");
+
+
+
+
+
+    tableViewBtn.addEventListener("click", () => {
+
+
+        tableView.classList.remove("hidden");
+
+
+        calendarView.classList.add("hidden");
+
+
+        tableViewBtn.classList.add("active");
+
+
+        calendarViewBtn.classList.remove("active");
+
+
+    });
+
+
+
+
+
+    calendarViewBtn.addEventListener("click", () => {
+
+
+        tableView.classList.add("hidden");
+
+
+        calendarView.classList.remove("hidden");
+
+
+        calendarViewBtn.classList.add("active");
+
+
+        tableViewBtn.classList.remove("active");
+
+
+    });
+
+
+
+
+
+    // ========== INTERACTIVE CALENDAR ==========
+
+
+    const calendar = document.getElementById('calendar');
+
+
+    const modal = document.getElementById('taskModal');
+
+
+    const saveBtn = document.getElementById('saveTask');
+
+
+    const cancelBtn = document.getElementById('cancelTask');
+
+
+    const taskTitleInput = document.getElementById('taskTitle');
+
+
+    const taskAssignedInput = document.getElementById('taskAssigned');
+
+
+
+
+
+    const daysInMonth = 30; // demo month
+
+
+    let selectedDay = null;
+
+
+    const tasks = {};
+
+
+
+
+
+    function buildCalendar() {
+
+
+        calendar.innerHTML = `
+
+
+            <div class="day header">Sun</div>
+
+
+            <div class="day header">Mon</div>
+
+
+            <div class="day header">Tue</div>
+
+
+            <div class="day header">Wed</div>
+
+
+            <div class="day header">Thu</div>
+
+
+            <div class="day header">Fri</div>
+
+
+            <div class="day header">Sat</div>
+
+
+        `;
+
+
+        for (let i = 1; i <= daysInMonth; i++) {
+
+
+            const dayDiv = document.createElement('div');
+
+
+            dayDiv.classList.add('day');
+
+
+            dayDiv.innerHTML = `<span class="date">${i}</span><div class="task-list"></div>`;
+
+
+            if (i === new Date().getDate()) dayDiv.classList.add('today'); // highlight today
+
+
+            dayDiv.addEventListener('click', () => openModal(i));
+
+
+            calendar.appendChild(dayDiv);
+
+
+        }
+
+
+        renderTasks();
+
+
+    }
+
+
+
+
+
+    function renderTasks() {
+
+
+        document.querySelectorAll('.task-list').forEach(list => list.innerHTML = '');
+
+
+        for (let day in tasks) {
+
+
+            const dayCell = calendar.querySelector(`.day:nth-child(${parseInt(day) + 7})`);
+
+
+            const list = dayCell.querySelector('.task-list');
+
+
+            tasks[day].forEach(t => {
+
+
+                const p = document.createElement('p');
+
+
+                p.textContent = `${t.title} (${t.assigned})`;
+
+
+                list.appendChild(p);
+
+
+            });
+
+
+        }
+
+
+    }
+
+
+
+
+
+    function openModal(day) {
+
+
+        selectedDay = day;
+
+
+        modal.classList.remove('hidden');
+
+
+        taskTitleInput.value = '';
+
+
+        taskAssignedInput.value = '';
+
+
+    }
+
+
+
+
+    saveBtn.addEventListener('click', () => {
+
+
+        const title = taskTitleInput.value.trim();
+
+
+        const assigned = taskAssignedInput.value.trim();
+
+
+        if (!title) return alert('Please enter a task title.');
+
+
+        if (!tasks[selectedDay]) tasks[selectedDay] = [];
+
+
+        tasks[selectedDay].push({ title, assigned });
+
+
+        modal.classList.add('hidden');
+
+
+        renderTasks();
+
+
+    });
+
+
+
+
+
+    cancelBtn.addEventListener('click', () => modal.classList.add('hidden'));
+
+
+    buildCalendar();
+
+
+</script>

@@ -1,2 +1,2 @@
 cd "TrackEd"
-dotnet watch run
+dotnet watch run --urls "https://0.0.0.0:5287"
