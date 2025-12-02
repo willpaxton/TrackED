@@ -32,5 +32,4 @@ launch "TrackEd.sln" to open in Visual Studio Community
 
 launch "VSCode_Launch.bat" to open in VS Code
 
-run "VSCode_Compiler.bat" to compile code and launch an auto-monitoring test website
-or optionally run `dotnet watch run --urls "https://0.0.0.0:5287"`
+Run "VSCode_Compiler.bat" to compile code and launch an auto-monitoring test website or optionally run dotnet watch run --urls "https://0.0.0.0:5287" from the TrackEd folder to host locally on port 5287 with hot-reload enabled for a development environment.  If hot-reload is not needed or this program is running in production, drop “watch” from the prior command and instead run dotnet run --urls https://0.0.0.0:5287..Ensure that you connect to the website over HTTPS, or geolocation functionality will not work.  
