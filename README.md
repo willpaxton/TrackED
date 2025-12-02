@@ -25,6 +25,9 @@
 - Provide quick access to student progress & task completion​
 - Simplify coordination between professors and students​
 
+### Launching the Application
+
+First, the .NET 8.0 SDK is a prerequisite to running this app.  You can download it at https://dotnet.microsoft.com/en-us/download/dotnet/8.0.
 
 To open and run code:
 
